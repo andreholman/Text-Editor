@@ -1,3 +1,20 @@
+/* CSS animations */
+
+@-webkit-keyframes fade {
+    0% {opacity: 0.35;}
+    100% {opacity: 1;}
+}
+
+@-moz-keyframes fade {
+    0% {opacity: 0.35;}
+    100% {opacity: 1;}
+}
+
+@-o-keyframes fade {
+    0% {opacity: 0.35;}
+    100% {opacity: 1;}
+}
+
 body {
     font-family: "Ubuntu", Arial;
     margin: 0;
@@ -6,10 +23,14 @@ body {
 
 ul.tab {
     list-style-type: none;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
     margin: 0;
     padding: 0;
+    height: 50px;
     overflow: hidden;
-    background-color: #222;
+    background: #222;
 }
 
 /* Float the list items side by side */
@@ -22,28 +43,42 @@ ul.tab li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    transition: 0.4s;
+    transition: 0.3s all;
     font-size: 20px;
+}
+
+ul.tab li#editor {
+    float: right;
+    background-color: #4CAF50;
+}
+
+ul.tab li#editor a:hover {
+    background-color: #5fb962;
 }
 
 /* Change background color of links on hover */
 ul.tab li a:hover {
-    background-color: #151515;
+    background-color: #222;
 }
 
 /* Create an active/current tablink class */
-.active {
-    border-bottom: #FFF;
+ul.tab li a:focus, .active {
+    color: #4CAF50 !important;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
     border-top: none;
+    z-index: 0;
     width: 100%;
-    font-family: "Ubuntu Mono";
+    font-family: "Ubuntu Mono", monospace;
     background-color: rgba(0,0,0,0);
     overflow: hidden;
+    -webkit-animation: fade 0.65s;
+    -moz-animation: fade 0.65s;
+    -o-animation: fade 0.65s;
+    animation: fade 0.65s;
 }
 
 .tabcontent textarea#html, .tabcontent textarea#js, .tabcontent textarea#css {
@@ -54,8 +89,9 @@ ul.tab li a:hover {
     min-height: 750px;
     max-height: 900px;
     margin: 0;
-    margin-top: 5px;
-    padding:4px;
+    padding: 15px;
+    padding-top: 10px;
+    margin-top: 55px;
     color: #F6F6F6;
     background-color: #222;
     border: none;

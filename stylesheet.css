@@ -5,7 +5,7 @@
     100% {opacity: 1;}
 }
 
-@-moz-keyframes fade {
+@-moz-keyframes fade { 
     0% {opacity: 0.35;}
     100% {opacity: 1;}
 }
@@ -57,8 +57,8 @@ ul.tab li#editor a:hover {
 }
 
 /* Change background color of links on hover */
-ul.tab li a:hover {
-    background-color: #222;
+ul.tab li a:hover:not(.active) {
+    background-color: #292929;
 }
 
 /* Create an active/current tablink class */

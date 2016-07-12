@@ -5,13 +5,48 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="fontface.css">
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 <body>
 	<ul class="tab">
     	<li><a href="index.html" class="nav">Home</a></li>
 	    <li><a href="#" class="nav">About</a></li>
-	    <li id="editor"><a href="text-edit.html" class="nav">Editor</a></li>
+	    <li id="editor"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
 	</ul>
+
+	<div id="id01" class="modal">
+
+  <form class="modal-content animate" action="https://andreholman.github.io/Text-Editor/text-edit.html">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+      <i class="avatar fa fa-user"></i>
+    </div>
+
+    <div class="container">
+      <label>Username</label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+
+      <label class="switch">
+        <input type="checkbox" name="remember" value="true">
+        <div class="slider round"></div>
+        <p id="remem">Remember Me</p>
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="submit">Login </button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="#">Forgot password?</a></span>
+    </div>
+  </form>
+</div>
+
+<a href="https://github.com/andreholman/Text-Editor/zipball/gh-pages">Download .zip</a>
 </body>
 </html>
